@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial>
+/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial> */
 
 .topbar {
 	top:0;
@@ -44,8 +44,8 @@
 .toplinks { 
     background-color: #00000;
 	text-align: center;
-	font-family: Questrial; 
-/* 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; */
+/* 	font-family: Questrial;  */
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 	position: relative; 
 	padding: 0px;
 	margin: 0;
@@ -58,8 +58,8 @@
 	margin-left: 85%;
     margin-top: 35px;
 	position: absolute;
-	font-family: Questrial; 
-/*     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; */
+/* 	font-family: Questrial;  */
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     color:  white;
     font-size: 1vw;
 	margin-bottom: 0;
@@ -157,8 +157,8 @@
 
 .specTxt p {
 	
-/*   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; */
-		font-family: Questrial; 
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+/* 		font-family: Questrial;  */
   color:  #000000;
   text-align: center;
   padding-top: 15px;
@@ -205,8 +205,8 @@
 	
 	
   width: 40%;
-/*   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; */
-		font-family: Questrial; 
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+/* 		font-family: Questrial;  */
   color:  #FFFFFF;
   text-align: center;
   font-weight: 100;l
@@ -387,8 +387,8 @@
 	
 	 color: #FFFFFF;
 	 text-decoration: none;
-/* 	 font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; */
-		font-family: Questrial; 
+	 font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+/* 		font-family: Questrial;  */
 
 }
 
@@ -472,8 +472,8 @@ body {
 
 p {	
 	
-/*   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; */
-		font-family: Questrial; 
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+/* 		font-family: Questrial;  */
   color:  #000000;
   text-align: center;
   padding-right: auto;
@@ -482,8 +482,8 @@ p {
 
 p2 {	
 	
-/*   font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; */
-		font-family: Questrial; 
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+/* 		font-family: Questrial;  */
   color:  #A7A7A7;
   text-align: center;
   padding-left: 50%;
