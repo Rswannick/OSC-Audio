@@ -154,7 +154,8 @@ Top bar and contents
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #000000;
   min-width: 80px;
   box-shadow: 0px 20px 16px 0px rgba(0,0,0,0.2);
   padding: 0px 0px 0px 0px;
@@ -175,7 +176,7 @@ Top bar and contents
 }
 
 .dropdown-content a {
-	 color: #000000;
+  color: #FFFFFF;
 	 text-decoration: none;
 	 
 }
