@@ -718,6 +718,51 @@ h1 {
 	  letter-spacing: 20px;
 }
 
+h2 {
+	  color: white;
+	  font-size: 2.5vw;
+	  font-style: normal;
+	  text-align: center;
+	
+	  padding-top: 5px;
+	  padding-bottom: 5px;
+	
+	  font-weight: 100;
+	  letter-spacing: 10px;
+}
+
+
+h3 {
+	  color: white;
+	  font-size: 2.5vw;
+	  font-style: normal;
+	  text-align: center;
+	
+	  padding-top: 5px;
+	  padding-bottom: 5px;
+	
+	  font-weight: 100;
+	  letter-spacing: 10px;
+}
+
+
+li {
+	  color: white;
+	  font-size: 1.5vw;
+	  font-style: normal;
+	  text-align: center;
+	
+	  list-style: none;
+	
+	  padding-top: 5px;
+	  padding-bottom: 5px;
+	
+	  font-weight: 100;
+	  letter-spacing: 1px;
+}
+
+
+
 body {
  	 background-color: #191919;
  	 font-family: "Questrial", sans-serif;
@@ -727,7 +772,7 @@ body {
 
 p {	
 	
-  color:  #000000;
+  color:  #FFFF;
   text-align: center;
   font-size: 1vw;
 }
