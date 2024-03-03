@@ -1,80 +1,4 @@
 
-/*
-
-Account to do...
-
-.account {
-	
-	color:white;
-	margin-left: 85%;
-    margin-top: 35px;
-	position: absolute;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    color:  white;
-    font-size: 1vw;
-	margin-bottom: 0;
-}
-
-.actdropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.actdropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #FFFFFF;
-  min-width: 80px;
-  box-shadow: 0px 20px 16px 0px rgba(0,0,0,0.2);
-  padding: 0px 0px 0px 0px;
-  z-index: 1;	
-  border-radius: 10px;
-  opacity: 95%;
-	
-  margin-left: 25px;
-  margin-right: auto;	
-  padding-left: 10%; 
-  padding-right: 10%;
-
-}
-
-.actdropdown:hover .actdropdown-content {
-  display: block;
-
-}
-
-.actdropdown-content a {
-	 color: #000000;
-	 text-decoration: none;
-
-}
-
-.act a {
-	 color: #FFFFFF;
-	 text-decoration: none;
-	 
-}
-
-.actdropdown-content li {
-	
-  margin-left: -40px;
-  list-style: none;
-  display: list-item;
-  font-size: 1vw;
-  padding: 5px;
-	
-}
-
-
-.act li {
-  display: inline-block;
-  font-size: 1.5vw;
-  padding: 0px;
-
-}
-	
-
-*/
 
 /* 
 
@@ -459,36 +383,51 @@ Slide Show
 
 
 .btn {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  padding-bottom: -10px;
-  border: none;
-  border-radius: 50%;
-  z-index: 10px;
-  cursor: pointer;
-  background-color: #000000;
-  font-size: 18px;
-  color: white;
-/*  z-index: 3;*/
-	
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    padding-bottom: -10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.45); /* Adjust opacity here */
+    font-size: 18px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s; /* Add transition for smooth color change */
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover color: very opaque white */
 }
 
 .btn:active {
-  transform: scale(1.1);
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.5); /* Active color: slightly opaque white */
+}
+
+.btn-prev::before {
+    content: '\2039'; /* Unicode character for left arrow */
+}
+
+.btn-next::before {
+    content: '\203A'; /* Unicode character for right arrow */
 }
 
 .btn-prev {
-  top: 45%;
-  left: 2%;
-
+    top: 45%;
+    left: 2%;
 }
 
 .btn-next {
-  top: 45%;
-  right: 2%;
-
+    top: 45%;
+    right: 2%;
 }
+
+
 
 
 /* 
@@ -663,39 +602,36 @@ Download Button
 }
 
 .dlbtn button {
-	
-	display: flex;
-	
-	width: 100%;
-	height: 100%;
-	    	
-	text-align: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 85%;
+    height: 100%;
+    text-align: center;
     background-color: rgba(255, 0, 0, .8);
-	
-	border-color: black;
-	border-width: 1.5px;
-	
+    border: none;
+    border-radius: 30px; /* Adjust border radius as needed */
     font-family: "Helvetica Neue";
-	color: white;
-	border-radius: 3px;
-	
-	font-size: 1.2vw; 
-	letter-spacing: 6px;
-	font-weight: 300;
-		
-	padding-top: 8px;
-	padding-bottom: 5px;
-	padding-left: 25px;
-	padding-right: 0px;
-	
-	margin-top: 12px;
-	margin-bottom: 10px;
-	margin-left: 20px;
-	
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-	
+    color: white;
+    font-size: 1.2vw;
+    letter-spacing: 6px;
+    font-weight: 300;
+    padding: 10px 25px; /* Adjust padding as needed */
+    margin: 12px 20px; /* Adjust margins as needed */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+    outline: none; /* Remove default button outline */
 }
+
+.dlbtn button:hover {
+    background-color: rgba(255, 25, 25, .8); /* Change background color on hover */
+}
+
+.dlbtn button:active {
+    background-color: white; /* Invert colors when button is clicked */
+    color: rgba(255, 0, 0, .8);
+}
+
 
 
 /* 
@@ -704,18 +640,24 @@ General Styles
 
 */
 
+@font-face {
+    font-family: 'RobotoFlex';
+    src: url('https://fonts.cdnfonts.com/css/robotoflex') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 h1 {
-	  color: white;
-	  font-size: 3vw;
-	  font-style: normal;
-	  text-align: center;
-	
-	  padding-top: 5px;
-	  padding-bottom: 5px;
-	
-	  font-weight: 100;
-	  letter-spacing: 20px;
+    font-family: 'RobotoFlex', Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; /* RobotoFlex Normal first */
+    color: white;
+    font-size: 3vw;
+    font-weight: 400; /* RobotoFlex Normal is typically 400 weight */
+    font-style: normal;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    letter-spacing: 10px; /* Adjust letter spacing as needed */
 }
 
 h2 {
