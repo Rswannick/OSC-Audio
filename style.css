@@ -1,5 +1,3 @@
-
-
 /* 
 
 Top bar and contents
@@ -192,7 +190,7 @@ Main Page Promo Section
 	margin-left: auto;
 	margin-right: auto;
 	
-	margin-top: 10px;
+	margin-top: 0px;
     margin-bottom: 80px;
 	
 	width: 90%; 
@@ -338,7 +336,6 @@ Main Page Promo Section
 Slide Show
 
 */
-
 .slider {
   padding-top: 0px;
   width: 100%;
@@ -351,48 +348,52 @@ Slide Show
   margin-left: auto;
   margin-right: auto;
   margin-top: -2px;
-  margin-bottom: 15px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-
-}
-
-.slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -3;
-
+  margin-bottom: 0px;
+  background-color: transparent; /* Set background to transparent */
 }
 
 .slide {
   width: 100%;
   max-width: 800px;
-  height: 400px;
+  height: auto; /* Change height to auto */
+  max-height: 70vh; /* Limit maximum height to 70% of viewport height */
   position: absolute;
-  transition: all 0.5s; 
+  transition: all 0.5s;
+  background-color: transparent; /* Set slide background to transparent */
+  border-radius: 10px; /* Apply border-radius to the slide container */ display: inline-block; /* Ensure the slide container only takes up the necessary space */
+  overflow: hidden; /* Hide any overflow beyond the image dimensions */
 
 }
+
+.slide img {
+    width: 100%; /* Ensure the image fills the entire slide */
+    height: auto; /* Allow the image to scale proportionally */
+    border-radius: 0px; /* Apply border-radius to match the slide */
+}
+
 
 
 /* 
 
-Slide Show
+Slide Show Buttons
 
 */
 
+/* 
+
+Slide Show Buttons
+
+*/
 
 .btn {
     position: absolute;
     width: 50px;
     height: 50px;
-    padding-bottom: -10px;
     border: none;
     border-radius: 50%;
     z-index: 10px;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.45); /* Adjust opacity here */
-    font-size: 18px;
     color: white;
     display: flex;
     justify-content: center;
@@ -409,7 +410,16 @@ Slide Show
     background-color: rgba(255, 255, 255, 0.5); /* Active color: slightly opaque white */
 }
 
-.btn-prev::before {
+.btn-prev,
+.btn-next {
+    font-family: 'Arial', sans-serif; /* Specify a fallback font */
+    font-size: 24px; /* Adjust font size for arrows */
+    top: calc(50% - 12px); /* Center vertically */
+    color: white; /* Ensure arrow color is consistent */
+}
+
+.btn-prev::before,
+.btn-next::before {
     content: '\2039'; /* Unicode character for left arrow */
 }
 
@@ -418,12 +428,10 @@ Slide Show
 }
 
 .btn-prev {
-    top: 45%;
     left: 2%;
 }
 
 .btn-next {
-    top: 45%;
     right: 2%;
 }
 
@@ -549,89 +557,80 @@ Product Pages
 	height: 500px;
 }
 
-
-/* 
-
-Download Button
-
-*/
-
-
 .dlbtn {
-	
-	position: static;
-	margin-top: 0px;
-	margin-bottom: 20px;
-	background-color: black;
-	align-items: flex-start;
-	height: 10%;
-	width: 100%;
-	display: flex;
-	overflow: hidden;
-	padding-top: 0px;
-	padding-bottom: 0px;
-
-}
-
-.dlbtn li {
-
-  display: inline-block;
-  font-size: 1.25vw;
-  padding-right: 20px;
-	
-  padding-top: 10px;	
-  padding-bottom: 0px;
-	
-  margin-bottom: 30px;
-
-
-
-}
-
-.dlbtn ul {
-	
-	margin-top: 10px;
-	margin-bottom: -50px;
-}
-
-.dlbtn a {
-	
-	 color: #FFFFFF;
-	 text-decoration: none;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px;
 }
 
 .dlbtn button {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    width: 85%;
-    height: 100%;
+    width: 100%;
+    height: auto;
     text-align: center;
-    background-color: rgba(255, 0, 0, .8);
+    background-color: rgba(255, 0, 0, 0.8); /* Set background to red */
     border: none;
-    border-radius: 30px; /* Adjust border radius as needed */
+    border-radius: 30px;
     font-family: "Helvetica Neue";
     color: white;
-    font-size: 1.2vw;
+    font-size: 3vw;
     letter-spacing: 6px;
     font-weight: 300;
-    padding: 10px 25px; /* Adjust padding as needed */
-    margin: 12px 20px; /* Adjust margins as needed */
+    padding: 10px 25px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    transition: background-color 0.3s ease; /* Smooth transition for color change */
-    outline: none; /* Remove default button outline */
+    transition: background-color 0.3s ease;
 }
 
 .dlbtn button:hover {
-    background-color: rgba(255, 25, 25, .8); /* Change background color on hover */
+    background-color: rgba(255, 25, 25, .8);
 }
 
 .dlbtn button:active {
-    background-color: white; /* Invert colors when button is clicked */
-    color: rgba(255, 0, 0, .8);
+    background-color: rgba(255, 0, 0, .8);
+    color: white;
 }
 
+/* Media query for larger screens and smaller window sizes */
+@media screen and (min-width: 800px) {
+    .dlbtn {
+        width: 60%; /* Buttons take up 60% width on larger screens and smaller window sizes */
+    }
+	    .dlbtn button {
+        font-size: 2vw; /* Increase font size when button width is 60% */
+    }
+		    .dlbtn p {
+        font-size: 1.25vw; /* Increase font size when button width is 100% */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .dlbtn {
+        width: 70%; /* Buttons take up full width on screens smaller than 60% */
+    }
+	    .dlbtn p {
+        font-size: 2vw; /* Increase font size when button width is 100% */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .dlbtn {
+        width: 90%; /* Buttons take up full width on screens smaller than 60% */
+    }
+	    .dlbtn p {
+        font-size: 3vw; /* Increase font size when button width is 100% */
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .dlbtn {
+        width: 100%; /* Buttons take up full width on screens smaller than 60% */
+    }
+	    .dlbtn p {
+        font-size: 3.5vw; /* Increase font size when button width is 100% */
+    }
+}
 
 
 /* 
@@ -712,12 +711,20 @@ body {
 
 }
 
-p {	
-	
-  color:  #FFFF;
+@font-face {
+  font-family: 'RobotoFlex';
+  font-style: normal;
+  font-weight: 100;
+  src: local('RobotoFlex Thin'), url(path/to/RobotoFlex-Thin.woff) format('woff');
+}
+
+p {
+  font-family: 'RobotoFlex', sans-serif;
+  color: #FFFF;
   text-align: center;
   font-size: 1vw;
 }
+
 
 p2 {	
 	
@@ -729,5 +736,3 @@ p2 {
   font-size: .75vw;
 
 }
-
-
