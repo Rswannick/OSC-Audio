@@ -1,108 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial">
-<title>OSC Audio Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Agency Page Template</title>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <!-- Slider CSS -->
+    <style>
+        /* Slide Show */
+        #slider-container.slider {
+            padding-top: 0px;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            position: relative;
+            align-content: center;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -2px;
+            margin-bottom: 0px;
+            background-color: transparent;
+        }
+
+        #slider-container .slide {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            max-height: 70vh;
+            position: absolute;
+            transition: all 0.5s;
+            background-color: transparent;
+            border-radius: 10px;
+            display: inline-block;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        #slider-container .slide.active {
+            opacity: 1;
+        }
+
+        #slider-container .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Slide Show Buttons */
+        #slider-container .btn {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            z-index: 1000;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.45);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        #slider-container .btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #slider-container .btn:active {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #slider-container .btn-prev,
+        #slider-container .btn-next {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            top: calc(50% - 12px);
+            color: white;
+        }
+
+        #slider-container .btn-prev::before,
+        #slider-container .btn-next::before {
+            content: '\2039';
+        }
+
+        #slider-container .btn-next::before {
+            content: '\203A';
+        }
+
+        #slider-container .btn-prev {
+            left: 2%;
+        }
+
+        #slider-container .btn-next {
+            right: 2%;
+        }
+    </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="images/Banner_CLogo_B.png" alt="Logo" width="100" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+   
+</nav>
 
-<div class="topbar">
-<div class="toplinks">
-    <a href="index.html"><img alt="Logo" src="images/Banner_CLogo_B.png" width="1px" height="1px"></a>
-    <ul class="nav">
-        <div class="dropdown">
-            <span><li><a href="Software/Instrumentsmain.html">INSTRUMENTS</a></li></span>
-            <div class="dropdown-content">
-                <ol>
-                    <li><a href="Software/sub808.html">sub808</a></li>
-                    <li><a href="Software/KalimbaKeys.html">Kalimba Keys</a></li>
-                    <li><a href="Software/HBmain.html">healingBowl</a></li>
-                    <li><a href="Software/LPmain.html">luaPseL</a></li>
-                    <li><a href="Software/808main.html">Modular 808</a></li>
-                    <li><a href="Software/ZTPmain.html">Thru-Zero Piano</a></li>
-                    <li><a href="Software/Dustymain.html">Dusty Rings Keys</a></li>
-                    <li><a href="Software/CaliKickmain.html">caliKicks</a></li>
-                </ol>
-            </div>
-        </div>
-        <div class="dropdown">
-            <span><li><a href="Software/Effectsmain.html">EFFECTS</a></li></span>
-            <div class="dropdown-content">
-                <ol>
-                    <li><a href="Software/spaceVerbmain.html">spaceVerb</a></li>
-                    <li><a href="Software/Plateverbmain.html">plateVerb</a></li>
-                    <li><a href="Software/Springverbmain.html">springVerb</a></li>
-                    <li><a href="Software/sumFXmain.html">sumFX - iOS Now Available!</a></li>
-                </ol>
-            </div>
-        </div>
-        <div class="dropdown">
-            <span><li><a href="Software/Toolsmain.html">TOOLS</a></li></span>
-            <div class="dropdown-content">
-                <ol>
-                    <li><a href="Software/Scopemain.html">Oscilliscope</a></li>
-                    <li><a href="Software/Oscmain.html">Pocket Oscillator</a></li>
-                    <li><a href="Software/BFMmain.html">BFM (Metering) - iOS Now Available!</a></li>
-                </ol>
-            </div>
-        </div>
-        <li><a href="index.html">HOME</a></li>
-    </ul>
-</div>
-</div>
-
-<div class="slider" style="margin-top: 10px">
-    <button class="btn btn-next" style="z-index: 1"></button>
+<div id="slider-container" class="slider" style="margin-top: 10px;">
     <button class="btn btn-prev" style="z-index: 1"></button>
+    <button class="btn btn-next" style="z-index: 1"></button>
 
-    <div class="slide"><a href="Software/sub808.html"><img src="images/sub808/Banner_sub808_v101.png" alt=""></a></div>
-    <div class="slide"><a href="Software/KalimbaKeys.html"><img src="images/KalimbaKeys/YT_Thumb_kalimba_v1_1.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/spaceVerbmain.html"><img src="images/spaceVerb/YT_Thumb_spaceVerb_v1.1.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/Plateverbmain.html"><img src="images/plateVerb/YT_Thumb_plateVerb_v1.1.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/Springverbmain.html"><img src="images/springVerb/YT_Thumb_springVerb.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/sumFXmain.html"><img src="images/sumFX/Promo3_sumFX.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/Oscmain.html"><img src="images/OSC/YT_THUMB_OSC_NEW.png" alt=""></a></div>
-    <div class="slide"><a href="Software/Scopemain.html"><img src="images/Scope/YT_THUMB_OSCOPE_NEW.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/BFMmain.html"><img src="images/BFM/YT_Thumb_BFM_1_6.png" alt=""></a></div>
-    <div class="slide"><a href="Software/BFMmain.html"><img src="images/BFM/YT_Thumb_BFMiOS.png" alt=""></a></div>
-    <div class="slide"><a href="Software/CaliKickmain.html"><img src="images/caliKicks/Promo_CaliKicks.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/Dustymain.html"><img src="images/DUSTY/FP_Tile_DUSTY.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/ZTPmain.html"><img src="images/ZTP/FP_Tile_ZTP.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/808main.html"><img src="images/MOD808/FP_Tile_MOD808.jpg" alt=""></a></div>
-    <div class="slide"><a href="Software/HBmain.html"><img src="images/HB_Banner.png" alt=""></a></div>
-    <div class="slide"><a href="Software/LPmain.html"><img src="images/LP_Banner.png" alt=""></a></div>
-</div>
-
-<div class="promosection" style="width: 100%; padding-top: 0px;">
-
-<a href="https://oscaudio.gumroad.com/" style="text-decoration: none;">
-    <div class="dlbtn">
-        <button class="dlbtn"><p>BROWSE ALL PRODUCTS</p></button>
+    <div class="slide active">
+        <a href="Software/sub808.html"><img src="images/sub808/Banner_sub808_v101.png" alt=""></a>
     </div>
-</a>
-<a href="https://www.gumroad.com/library" style="text-decoration: none">
-    <div class="dlbtn">
-        <button class="dlbtn"><p>MY DOWNLOADS</p></button>
+    <div class="slide">
+        <a href="Software/KalimbaKeys.html"><img src="images/KalimbaKeys/YT_Thumb_kalimba_v1_1.jpg" alt=""></a>
     </div>
-</a>
-
-
 </div>
 
-</div>
-
-<div class="bottombar">
-    <ul class="btmnav">
-        <li><a href="Company/About.html">ABOUT US</a></li>
-        <li><a href="Company/Contact.html">CONTACT US</a></li>
-        <li><a href="Company/FAQ.html">FAQ</a></li>
-        <li><a href="Company/BETA.html">BETA</a></li>
-    </ul>
-</div>
-
-<script src="javascript.js"></script>
-</body>
+<header>
+      <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="text-center">Bringing studio quality, affordable plugins to everyone.&nbsp;</h1>
+              <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+     
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <a href="https://oscaudio.gumroad.com/"><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/Shop.png" data-holder-rendered="true"></a>
+            <h3>Shop</h3>
+            <p>Browse all of our products, and grab some new audio gear for your projects!&nbsp; &nbsp; &nbsp;&nbsp;</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <a href="https://https://gumroad.com/library"><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/MyDownloads.png" data-holder-rendered="true"></a>            <h3>My Downloads</h3>
+            <p>Download your existing paid and free products from your Gumroad Library&nbsp; &nbsp; &nbsp;</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <a href="https://oscaudio.netlify.app/company/faq"><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/Videos.png" data-holder-rendered="true"></a>            <h3>Watch</h3>
+            <p>Learn more about OSC Audio products on our YouTube</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <a href="support@oscaudio.com"><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/Support.png" data-holder-rendered="true"></a>            <h3>FAQ</h3>
+            <p>Browse through our frequently asked questions</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <a href="contact@oscaudio.com"><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/ContactUs.png" data-holder-rendered="true"></a>            <h3>Contact</h3>
+            <p>Reach out with interests or questions on our products</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+            <a href="https://www.youtube.com/@oscaudio"><img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/FAQ.png" data-holder-rendered="true"></a>            <h3>Support</h3>
+            <p>Need some help? Contact our team.</p>
+          </div>
+        </div>
+       
+      <div class="jumbotron" style="background-color: #000">
+        <div class="container">
+          <div class="row">
+            <div class="text-center col-md-8 col-12 mx-auto">
+              <p class="lead">Want to stay tuned in to the latest OSC Audio news? Sign-up for our newsletter below and get email alerts of new freebies, products, and updates!&nbsp; &nbsp; &nbsp;</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-auto mx-auto"> <a class="btn btn-block btn-lg btn-success" href="https://oscaudio.gumroad.com/" title="" >Sign up now!</a> </div>
+          </div>
+        </div>
+      </div>
+  
+    <footer class="text-center">
+      <div class="container" >
+        <div class="row" style="background-color: #000">
+          <div class="col-12">
+            <p>Copyright © OSC Audio LLC. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+    <script src="js/jquery-3.4.1.min.js"></script> 
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <script src="js/popper.min.js"></script> 
+    <script src="js/bootstrap-4.4.1.js"></script>
+  </body>
 </html>
