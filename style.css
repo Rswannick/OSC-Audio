@@ -336,7 +336,6 @@ Main Page Promo Section
 Slide Show
 
 */
-
 .slider {
   padding-top: 0px;
   width: 100%;
@@ -350,7 +349,6 @@ Slide Show
   margin-right: auto;
   margin-top: -2px;
   margin-bottom: 15px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background-color: transparent; /* Set background to transparent */
 }
 
@@ -361,34 +359,40 @@ Slide Show
   position: absolute;
   transition: all 0.5s;
   background-color: transparent; /* Set slide background to transparent */
+  border-radius: 10px; /* Apply border-radius to the slide container */
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure image fits within the slide */
+  object-fit: contain; /* Ensure image fits within the slide */
+  border-radius: 10px; /* Apply border-radius to the image */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Apply drop shadow to the image */
 }
 
 
 
 /* 
 
-Slide Show
+Slide Show Buttons
 
 */
 
+/* 
+
+Slide Show Buttons
+
+*/
 
 .btn {
     position: absolute;
     width: 50px;
     height: 50px;
-    padding-bottom: -10px;
     border: none;
     border-radius: 50%;
     z-index: 10px;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.45); /* Adjust opacity here */
-    font-size: 18px;
     color: white;
     display: flex;
     justify-content: center;
@@ -405,7 +409,16 @@ Slide Show
     background-color: rgba(255, 255, 255, 0.5); /* Active color: slightly opaque white */
 }
 
-.btn-prev::before {
+.btn-prev,
+.btn-next {
+    font-family: 'Arial', sans-serif; /* Specify a fallback font */
+    font-size: 24px; /* Adjust font size for arrows */
+    top: calc(50% - 12px); /* Center vertically */
+    color: white; /* Ensure arrow color is consistent */
+}
+
+.btn-prev::before,
+.btn-next::before {
     content: '\2039'; /* Unicode character for left arrow */
 }
 
@@ -414,12 +427,10 @@ Slide Show
 }
 
 .btn-prev {
-    top: 45%;
     left: 2%;
 }
 
 .btn-next {
-    top: 45%;
     right: 2%;
 }
 
@@ -546,77 +557,46 @@ Product Pages
 }
 
 
-/* 
-
-Download Button
-
-*/
-
-
 .dlbtn {
-	
-	position: static;
-	margin-top: 0px;
-	margin-bottom: 20px;
-	background-color: black;
-	align-items: flex-start;
-	height: 10%;
-	width: 100%;
-	display: flex;
-	overflow: hidden;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	justify-content: center;
-
+    position: static;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    background-color: black;
+    align-items: flex-start;
+    height: auto; /* Adjust height to fit content */
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    justify-content: center;
 }
-
-.dlbtn li {
-
-  display: inline-block;
-  font-size: 1.25vw;
-  padding-right: 20px;
-	
-  padding-top: 10px;	
-  padding-bottom: 0px;
-	
-  margin-bottom: 30px;
-
-
-
-}
-
-.dlbtn ul {
-	
-	margin-top: 10px;
-	margin-bottom: -50px;
-}
-
-.dlbtn a {
-    color: #FFFFFF;
-    text-decoration: none !important;
-    outline: none; /* Remove default button outline */
-}
-
 
 .dlbtn button {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     width: 85%;
-    height: 100%;
+    height: auto; /* Adjust height to fit content */
     text-align: center;
     background-color: rgba(255, 0, 0, .8);
     border: none;
     border-radius: 30px; /* Adjust border radius as needed */
     font-family: "Helvetica Neue";
     color: white;
-    font-size: 1.2vw;
+    font-size: 3vw; /* Adjust font size for mobile */
     letter-spacing: 6px;
     font-weight: 300;
     padding: 10px 25px; /* Adjust padding as needed */
     margin: 12px 20px; /* Adjust margins as needed */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+@media (max-width: 768px) {
+    .dlbtn button {
+        font-size: 7vw; /* Adjust font size for smaller screens */
+    }
 }
 
 .dlbtn button:hover {
